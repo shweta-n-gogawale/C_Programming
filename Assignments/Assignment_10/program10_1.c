@@ -1,25 +1,23 @@
-#include <stdio.h>
+//TC: O(1)
+#include<stdio.h>
 
-void CheckEvenOdd(int num)
+double CircleArea(float fRadius)
 {
-    if(num % 2 == 0)
-    {
-        printf("Even\n");
-    }
-    else
-    {
-        printf("Odd\n");
-    }
+    // Logic
+    return 3.14 * fRadius * fRadius;
 }
 
 int main()
 {
-    int number;
+    float fValue = 0.0;
+    double dRet = 0.0;
 
-    printf("Enter number: ");
-    scanf("%d", &number);
+    printf("Enter radius\n");
+    scanf("%f",&fValue);
 
-    CheckEvenOdd(number);
+    dRet = CircleArea(fValue);
+
+    printf("Area of circle is %lf\n",dRet);
 
     return 0;
 }

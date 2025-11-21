@@ -1,29 +1,23 @@
-#include <stdio.h>
+//TC: O(1)
+#include<stdio.h>
 
-void CheckNumberType(int num)
+double FhtoCs(float fTemp)
 {
-    if(num > 0)
-    {
-        printf("Positive\n");
-    }
-    else if(num < 0)
-    {
-        printf("Negative\n");
-    }
-    else
-    {
-        printf("Zero\n");
-    }
+    // Logic
+    return (fTemp - 32) * (5.0/9.0);
 }
 
 int main()
 {
-    int number;
+    float fValue = 0.0;
+    double dRet = 0.0;
 
-    printf("Enter number: ");
-    scanf("%d", &number);
+    printf("Enter temperature in Fahrenheit\n");
+    scanf("%f",&fValue);
 
-    CheckNumberType(number);
+    dRet = FhtoCs(fValue);
+
+    printf("Temperature in celsius is %lf\n",dRet);
 
     return 0;
 }

@@ -1,29 +1,35 @@
 #include <stdio.h>
 
-void CheckNumberType(int num)
+int OddFactorial(int iNo)
 {
-    if(num > 0)
+    int i = 0, fact = 1;
+
+    if(iNo < 0)
     {
-        printf("Positive\n");
+        iNo = -iNo;
     }
-    else if(num < 0)
+
+    for(i = iNo; i >= 1; i--)
     {
-        printf("Negative\n");
+        if(i % 2 != 0)
+        {
+            fact = fact * i;
+        }
     }
-    else
-    {
-        printf("Zero\n");
-    }
+
+    return fact;
 }
 
 int main()
 {
-    int number;
+    int iValue = 0, iRet = 0;
 
     printf("Enter number: ");
-    scanf("%d", &number);
+    scanf("%d",&iValue);
 
-    CheckNumberType(number);
+    iRet = OddFactorial(iValue);
+
+    printf("Odd Factorial of number is %d", iRet);
 
     return 0;
 }

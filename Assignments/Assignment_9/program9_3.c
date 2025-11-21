@@ -1,25 +1,35 @@
 #include <stdio.h>
 
-void CheckLeapYear(int year)
+int EvenFactorial(int iNo)
 {
-    if((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+    int i = 0, fact = 1;
+
+    if(iNo < 0)
     {
-        printf("Leap Year\n");
+        iNo = -iNo;
     }
-    else
+
+    for(i = iNo; i >= 1; i--)
     {
-        printf("Not a Leap Year\n");
+        if(i % 2 == 0)
+        {
+            fact = fact * i;
+        }
     }
+
+    return fact;
 }
 
 int main()
 {
-    int yr;
+    int iValue = 0, iRet = 0;
 
-    printf("Enter year: ");
-    scanf("%d", &yr);
+    printf("Enter number: ");
+    scanf("%d",&iValue);
 
-    CheckLeapYear(yr);
+    iRet = EvenFactorial(iValue);
+
+    printf("Even Factorial of number is %d", iRet);
 
     return 0;
 }

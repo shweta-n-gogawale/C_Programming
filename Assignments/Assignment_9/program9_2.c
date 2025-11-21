@@ -1,25 +1,20 @@
 #include <stdio.h>
 
-void CheckEvenOdd(int num)
+int DollarToINR(int iNo)
 {
-    if(num % 2 == 0)
-    {
-        printf("Even\n");
-    }
-    else
-    {
-        printf("Odd\n");
-    }
+    return iNo * 70;
 }
 
 int main()
 {
-    int number;
+    int iValue = 0, iRet = 0;
 
-    printf("Enter number: ");
-    scanf("%d", &number);
+    printf("Enter number of USD: ");
+    scanf("%d", &iValue);
 
-    CheckEvenOdd(number);
+    iRet = DollarToINR(iValue);
+
+    printf("Value in INR is %d", iRet);
 
     return 0;
 }

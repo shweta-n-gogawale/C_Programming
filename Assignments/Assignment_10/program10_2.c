@@ -1,25 +1,26 @@
-#include <stdio.h>
+//TC: O(1)
+#include<stdio.h>
 
-void CheckEvenOdd(int num)
+double RectArea(float fWidth, float fHeight)
 {
-    if(num % 2 == 0)
-    {
-        printf("Even\n");
-    }
-    else
-    {
-        printf("Odd\n");
-    }
+    // Logic
+    return fWidth * fHeight;
 }
 
 int main()
 {
-    int number;
+    float fValue1 = 0.0, fValue2 = 0.0;
+    double dRet = 0.0;
 
-    printf("Enter number: ");
-    scanf("%d", &number);
+    printf("Enter width\n");
+    scanf("%f",&fValue1);
 
-    CheckEvenOdd(number);
+    printf("Enter height\n");
+    scanf("%f",&fValue2);
+
+    dRet = RectArea(fValue1, fValue2);
+
+    printf("Area of rectangle is %lf\n",dRet);
 
     return 0;
 }

@@ -1,31 +1,23 @@
-#include <stdio.h>
+//TC: O(1)
+#include<stdio.h>
 
-int FindLargest(int x, int y, int z)
+double SquareMeter(int iValue)
 {
-    if(x > y && x > z)
-    {
-        return x;
-    }
-    else if(y > x && y > z)
-    {
-        return y;
-    }
-    else
-    {
-        return z;
-    }
+    // Logic
+    return iValue * 0.0929;
 }
 
 int main()
 {
-    int a, b, c, result;
+    int iValue = 0;
+    double dRet = 0.0;
 
-    printf("Enter three numbers: ");
-    scanf("%d %d %d", &a, &b, &c);
+    printf("Enter area in square feet\n");
+    scanf("%d",&iValue);
 
-    result = FindLargest(a, b, c);
+    dRet = SquareMeter(iValue);
 
-    printf("Largest number is: %d\n", result);
+    printf("Area in square meter is %lf\n",dRet);
 
     return 0;
 }

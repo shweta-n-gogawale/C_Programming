@@ -1,25 +1,22 @@
-#include <stdio.h>
+//TC: O(1)
+#include<stdio.h>
 
-void CheckLeapYear(int year)
+int KMtoMeter(int iNo)
 {
-    if((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
-    {
-        printf("Leap Year\n");
-    }
-    else
-    {
-        printf("Not a Leap Year\n");
-    }
+    // Logic
+    return iNo * 1000;
 }
 
 int main()
 {
-    int yr;
+    int iValue = 0, iRet = 0;
 
-    printf("Enter year: ");
-    scanf("%d", &yr);
+    printf("Enter distance\n");
+    scanf("%d",&iValue);
 
-    CheckLeapYear(yr);
+    iRet = KMtoMeter(iValue);
+
+    printf("Distance in meter is %d\n",iRet);
 
     return 0;
 }

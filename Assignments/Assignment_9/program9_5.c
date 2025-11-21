@@ -1,31 +1,41 @@
 #include <stdio.h>
 
-int FindLargest(int x, int y, int z)
+int FactorialDiff(int iNo)
 {
-    if(x > y && x > z)
+    int i = 0;
+    int evenFact = 1;
+    int oddFact = 1;
+
+    if(iNo < 0)
     {
-        return x;
+        iNo = -iNo;
     }
-    else if(y > x && y > z)
+
+    for(i = iNo; i >= 1; i--)
     {
-        return y;
+        if(i % 2 == 0)
+        {
+            evenFact = evenFact * i;
+        }
+        else
+        {
+            oddFact = oddFact * i;
+        }
     }
-    else
-    {
-        return z;
-    }
+
+    return evenFact - oddFact;
 }
 
 int main()
 {
-    int a, b, c, result;
+    int iValue = 0, iRet = 0;
 
-    printf("Enter three numbers: ");
-    scanf("%d %d %d", &a, &b, &c);
+    printf("Enter number: ");
+    scanf("%d",&iValue);
 
-    result = FindLargest(a, b, c);
+    iRet = FactorialDiff(iValue);
 
-    printf("Largest number is: %d\n", result);
+    printf("Factorial difference is %d", iRet);
 
     return 0;
 }
