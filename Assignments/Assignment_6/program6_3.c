@@ -1,25 +1,26 @@
+/* Program 3: Check equality of two numbers */
 #include <stdio.h>
+#include <stdbool.h>
 
-void CheckLeapYear(int year)
+bool ChkEqual(int a, int b)
 {
-    if((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
-    {
-        printf("Leap Year\n");
-    }
-    else
-    {
-        printf("Not a Leap Year\n");
-    }
+    return (a == b);
 }
 
-int main()
+int main(void)
 {
-    int yr;
+    int iValue1 = 0, iValue2 = 0;
+    bool bRet = false;
 
-    printf("Enter year: ");
-    scanf("%d", &yr);
+    printf("Please enter two numbers: ");
+    if (scanf("%d %d", &iValue1, &iValue2) != 2) return 0;
 
-    CheckLeapYear(yr);
+    bRet = ChkEqual(iValue1, iValue2);
+
+    if (bRet)
+        printf("Equal\n");
+    else
+        printf("Not Equal\n");
 
     return 0;
 }

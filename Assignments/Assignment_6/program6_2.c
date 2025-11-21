@@ -1,25 +1,26 @@
+/* Program 2: Check greater than 100 */
 #include <stdio.h>
+#include <stdbool.h>
 
-void CheckEvenOdd(int num)
+bool ChkGreater(int number)
 {
-    if(num % 2 == 0)
-    {
-        printf("Even\n");
-    }
-    else
-    {
-        printf("Odd\n");
-    }
+    return (number > 100);
 }
 
-int main()
+int main(void)
 {
-    int number;
+    int iValue = 0;
+    bool bRet = false;
 
-    printf("Enter number: ");
-    scanf("%d", &number);
+    printf("Please enter number: ");
+    if (scanf("%d", &iValue) != 1) return 0;
 
-    CheckEvenOdd(number);
+    bRet = ChkGreater(iValue);
+
+    if (bRet)
+        printf("Greater\n");
+    else
+        printf("Smaller\n");
 
     return 0;
 }

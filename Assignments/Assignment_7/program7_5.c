@@ -1,31 +1,28 @@
 #include <stdio.h>
 
-int FindLargest(int x, int y, int z)
+void MultipleDisplay(int iNo)
 {
-    if(x > y && x > z)
+    int i = 0;
+
+    if(iNo < 0)
     {
-        return x;
+        iNo = -iNo;
     }
-    else if(y > x && y > z)
+
+    for(i = 1; i <= 5; i++)
     {
-        return y;
-    }
-    else
-    {
-        return z;
+        printf("%d ", i * iNo);
     }
 }
 
 int main()
 {
-    int a, b, c, result;
+    int iValue = 0;
 
-    printf("Enter three numbers: ");
-    scanf("%d %d %d", &a, &b, &c);
+    printf("Enter number: ");
+    scanf("%d",&iValue);
 
-    result = FindLargest(a, b, c);
-
-    printf("Largest number is: %d\n", result);
+    MultipleDisplay(iValue);
 
     return 0;
 }

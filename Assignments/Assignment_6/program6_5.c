@@ -1,31 +1,25 @@
+/* Program 5: Percentage calculation; handle total==0 safely */
 #include <stdio.h>
 
-int FindLargest(int x, int y, int z)
+float Percentage(int totalMarks, int obtainedMarks)
 {
-    if(x > y && x > z)
-    {
-        return x;
-    }
-    else if(y > x && y > z)
-    {
-        return y;
-    }
-    else
-    {
-        return z;
-    }
+    if (totalMarks <= 0) return 0.0f; /* avoid division by zero */
+    return ( (float)obtainedMarks * 100.0f ) / (float)totalMarks;
 }
 
-int main()
+int main(void)
 {
-    int a, b, c, result;
+    int total = 0, obtained = 0;
+    float fRet = 0.0f;
 
-    printf("Enter three numbers: ");
-    scanf("%d %d %d", &a, &b, &c);
+    printf("Please enter total marks: ");
+    if (scanf("%d", &total) != 1) return 0;
 
-    result = FindLargest(a, b, c);
+    printf("Please enter obtained marks: ");
+    if (scanf("%d", &obtained) != 1) return 0;
 
-    printf("Largest number is: %d\n", result);
+    fRet = Percentage(total, obtained);
 
+    printf("Percentage = %.2f%%\n", fRet);
     return 0;
 }

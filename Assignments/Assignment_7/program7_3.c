@@ -1,25 +1,28 @@
 #include <stdio.h>
 
-void CheckLeapYear(int year)
+void Display(int iNo)
 {
-    if((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+    int i = 0;
+
+    if(iNo < 0)
     {
-        printf("Leap Year\n");
+        iNo = -iNo;
     }
-    else
+
+    for(i = -iNo; i <= iNo; i++)
     {
-        printf("Not a Leap Year\n");
+        printf("%d ", i);
     }
 }
 
 int main()
 {
-    int yr;
+    int iValue = 0;
 
-    printf("Enter year: ");
-    scanf("%d", &yr);
+    printf("Enter number: ");
+    scanf("%d",&iValue);
 
-    CheckLeapYear(yr);
+    Display(iValue);
 
     return 0;
 }

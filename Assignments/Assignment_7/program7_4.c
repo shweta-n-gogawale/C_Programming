@@ -1,29 +1,31 @@
 #include <stdio.h>
 
-void CheckNumberType(int num)
+void OddDisplay(int iNo)
 {
-    if(num > 0)
+    int i = 0;
+
+    if(iNo < 0)
     {
-        printf("Positive\n");
+        iNo = -iNo;
     }
-    else if(num < 0)
+
+    for(i = 1; i <= iNo; i++)
     {
-        printf("Negative\n");
-    }
-    else
-    {
-        printf("Zero\n");
+        if(i % 2 != 0)
+        {
+            printf("%d ", i);
+        }
     }
 }
 
 int main()
 {
-    int number;
+    int iValue = 0;
 
     printf("Enter number: ");
-    scanf("%d", &number);
+    scanf("%d",&iValue);
 
-    CheckNumberType(number);
+    OddDisplay(iValue);
 
     return 0;
 }

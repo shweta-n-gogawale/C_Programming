@@ -1,25 +1,28 @@
 #include <stdio.h>
 
-void CheckEvenOdd(int num)
+void Display(int iNo)
 {
-    if(num % 2 == 0)
+    int i = 0;
+
+    if(iNo < 0)
     {
-        printf("Even\n");
+        iNo = -iNo;
     }
-    else
+
+    for(i = 1; i <= iNo; i++)
     {
-        printf("Odd\n");
+        printf("%d ", i);
     }
 }
 
 int main()
 {
-    int number;
+    int iValue = 0;
 
     printf("Enter number: ");
-    scanf("%d", &number);
+    scanf("%d",&iValue);
 
-    CheckEvenOdd(number);
+    Display(iValue);
 
     return 0;
 }
