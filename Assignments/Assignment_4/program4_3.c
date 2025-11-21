@@ -1,4 +1,6 @@
-void DisplayEvenFactor(int iNo)
+#include <stdio.h>
+
+void NonFact(int iNo)
 {
     int i = 0;
 
@@ -7,11 +9,11 @@ void DisplayEvenFactor(int iNo)
         iNo = -iNo;
     }
 
-    for(i = 1; i <= iNo ; i++)
+    for(i = 1; i < iNo; i++)
     {
-        if((iNo % i == 0) && (i % 2 == 0))
+        if(iNo % i != 0)
         {
-            printf("%d\t",i);
+            printf("%d\t", i);
         }
     }
 }
@@ -23,7 +25,7 @@ int main()
     printf("Enter number\n");
     scanf("%d",&iValue);
 
-    DisplayEvenFactor(iValue);
+    NonFact(iValue);
 
     return 0;
 }
