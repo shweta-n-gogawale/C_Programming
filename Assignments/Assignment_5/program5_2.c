@@ -1,29 +1,27 @@
-void DisplayFactor(int iNo)
+#include <stdio.h>
+
+int FindMax(int a, int b)
 {
-    int i = 0;
-
-    if(iNo <= 0)
+    if(a > b)
     {
-        iNo = -iNo;
+        return a;
     }
-
-    for(i = 1; i <= iNo ; i++)
+    else
     {
-        if(iNo % i == 0)
-        {
-            printf("%d\t",i);
-        }
+        return b;
     }
 }
 
 int main()
 {
-    int iValue = 0;
+    int num1, num2, result;
 
-    printf("Enter number\n");
-    scanf("%d",&iValue);
+    printf("Enter two numbers: ");
+    scanf("%d %d", &num1, &num2);
 
-    DisplayFactor(iValue);
+    result = FindMax(num1, num2);
+
+    printf("Maximum is: %d\n", result);
 
     return 0;
 }

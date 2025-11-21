@@ -1,29 +1,25 @@
-void DisplayEvenFactor(int iNo)
+#include <stdio.h>
+
+void CheckLeapYear(int year)
 {
-    int i = 0;
-
-    if(iNo <= 0)
+    if((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
     {
-        iNo = -iNo;
+        printf("Leap Year\n");
     }
-
-    for(i = 1; i <= iNo ; i++)
+    else
     {
-        if((iNo % i == 0) && (i % 2 == 0))
-        {
-            printf("%d\t",i);
-        }
+        printf("Not a Leap Year\n");
     }
 }
 
 int main()
 {
-    int iValue = 0;
+    int yr;
 
-    printf("Enter number\n");
-    scanf("%d",&iValue);
+    printf("Enter year: ");
+    scanf("%d", &yr);
 
-    DisplayEvenFactor(iValue);
+    CheckLeapYear(yr);
 
     return 0;
 }

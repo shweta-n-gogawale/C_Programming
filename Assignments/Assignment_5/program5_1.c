@@ -1,26 +1,25 @@
-void PrintEven(int iNo)
-{
-    if(iNo <= 0)
-    {
-        return;
-    }
+#include <stdio.h>
 
-    // Logic
-    int i = 0;
-    for(i = 1; i <= iNo; i++)
+void CheckEvenOdd(int num)
+{
+    if(num % 2 == 0)
     {
-        printf("%d\t", i * 2);
+        printf("Even\n");
+    }
+    else
+    {
+        printf("Odd\n");
     }
 }
 
 int main()
 {
-    int iValue = 0;
+    int number;
 
-    printf("Enter number\n");
-    scanf("%d",&iValue);
+    printf("Enter number: ");
+    scanf("%d", &number);
 
-    PrintEven(iValue);
+    CheckEvenOdd(number);
 
     return 0;
 }

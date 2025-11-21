@@ -1,39 +1,31 @@
-typedef int BOOL;
+#include <stdio.h>
 
-#define TRUE 1
-#define FALSE 0
-
-BOOL ChkVowel(char ch)
+int FindLargest(int x, int y, int z)
 {
-    if(ch=='A' || ch=='E' || ch=='I' || ch=='O' || ch=='U' ||
-       ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u')
+    if(x > y && x > z)
     {
-        return TRUE;
+        return x;
+    }
+    else if(y > x && y > z)
+    {
+        return y;
     }
     else
     {
-        return FALSE;
+        return z;
     }
 }
 
 int main()
 {
-    char cValue = '\0';
-    BOOL bRet = FALSE;
+    int a, b, c, result;
 
-    printf("Enter character\n");
-    scanf("%c",&cValue);
+    printf("Enter three numbers: ");
+    scanf("%d %d %d", &a, &b, &c);
 
-    bRet = ChkVowel(cValue);
+    result = FindLargest(a, b, c);
 
-    if(bRet == TRUE)
-    {
-        printf("It is Vowel");
-    }
-    else
-    {
-        printf("It is not Vowel");
-    }
+    printf("Largest number is: %d\n", result);
 
     return 0;
 }

@@ -1,23 +1,29 @@
-void DisplayConvert(char CValue)
+#include <stdio.h>
+
+void CheckNumberType(int num)
 {
-    if((CValue >= 'a') && (CValue <= 'z'))
+    if(num > 0)
     {
-        printf("%c", CValue - 32);
+        printf("Positive\n");
     }
-    else if((CValue >= 'A') && (CValue <= 'Z'))
+    else if(num < 0)
     {
-        printf("%c", CValue + 32);
+        printf("Negative\n");
+    }
+    else
+    {
+        printf("Zero\n");
     }
 }
 
 int main()
 {
-    char cValue = '\0';
+    int number;
 
-    printf("Enter character\n");
-    scanf("%c",&cValue);
+    printf("Enter number: ");
+    scanf("%d", &number);
 
-    DisplayConvert(cValue);
+    CheckNumberType(number);
 
     return 0;
 }
