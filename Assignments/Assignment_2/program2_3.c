@@ -1,25 +1,30 @@
+/*
+  Function Name : PrintHelloOrDemo
+  Description   : Accept an integer and print "Hello" if it is less than 10, otherwise print "Demo".
+  Input         : int N
+  Output        : "Hello" or "Demo" printed to stdout
+  Author        : Shweta Gogawale
+  Date          : 2025-11-20
+*/
+
 #include <stdio.h>
 
-void Display(int iNo)
+void PrintHelloOrDemo(int iNo)
 {
-    if(iNo < 10)
+    if (iNo < 10)
     {
-        printf("Hello");
+        printf("Hello\n");
     }
     else
     {
-        printf("Demo");
+        printf("Demo\n");
     }
 }
 
-int main()
+int main(void)
 {
-    int iValue = 0;
-
-    printf("Enter number: ");
-    scanf("%d", &iValue);
-
-    Display(iValue);
-
+    int iValue = 7; /* example input */
+    printf("Input: %d\nOutput: ", iValue);
+    PrintHelloOrDemo(iValue);
     return 0;
 }

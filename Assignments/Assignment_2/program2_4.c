@@ -1,26 +1,38 @@
+/*
+  Function Name : RepeatFirstNumber
+  Description   : Accept two integers (value, frequency). Print the first number repeated
+                  'frequency' times separated by spaces. If frequency <= 0, prints nothing.
+  Input         : int iValue, int iFrequency
+  Output        : first number printed iFrequency times
+  Author        : Shweta Gogawale
+  Date          : 2025-11-20
+*/
+
 #include <stdio.h>
 
-void Display(int iNo1, int iNo2)
+void RepeatFirstNumber(int iNo, int iFrequency)
 {
-    int iCnt = 0;
+    int i = 0;
 
-    for(iCnt = 1; iCnt <= iNo2; iCnt++)
+    if (iFrequency <= 0)
     {
-        printf("%d ", iNo1);
+        /* nothing to print */
+        printf("\n");
+        return;
     }
+
+    for (i = 0; i < iFrequency; i++)
+    {
+        printf("%d ", iNo);
+    }
+    printf("\n");
 }
 
-int main()
+int main(void)
 {
-    int iValue1 = 0, iValue2 = 0;
-
-    printf("Enter first number: ");
-    scanf("%d", &iValue1);
-
-    printf("Enter second number: ");
-    scanf("%d", &iValue2);
-
-    Display(iValue1, iValue2);
-
+    int iValue = 12;      /* example first number */
+    int iFrequency = 5;   /* example frequency */
+    printf("Input: %d  %d\nOutput: ", iValue, iFrequency);
+    RepeatFirstNumber(iValue, iFrequency);
     return 0;
 }

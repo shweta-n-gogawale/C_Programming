@@ -1,25 +1,37 @@
+/*
+  Function Name : PrintStars_Inc
+  Description   : Accept an integer N and print N asterisks '*' (left-to-right) using a loop.
+  Input         : int N
+  Output        : N asterisks printed on one line
+  Author        : Shweta Gogawale
+  Date          : 2025-11-20
+*/
+
 #include <stdio.h>
 
-void Display(int iNo)
+void PrintStars_Inc(int iNo)
 {
-    int iCnt = 0;
+    int i = 0;
+    if (iNo <= 0)
+    {
+        /* nothing to print */
+        return;
+    }
 
-    // Print * iNo times
-    while(iCnt < iNo)
+    /* print using a simple while loop */
+    i = 0;
+    while (i < iNo)
     {
         printf("* ");
-        iCnt++;
+        i++;
     }
+    printf("\n");
 }
 
-int main()
+int main(void)
 {
-    int iValue = 0;
-
-    printf("Enter number: ");
-    scanf("%d", &iValue);
-
-    Display(iValue);
-
+    int iValue = 5; /* example input */
+    printf("Input: %d\nOutput: ", iValue);
+    PrintStars_Inc(iValue);
     return 0;
 }
