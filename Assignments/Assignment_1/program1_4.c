@@ -1,3 +1,13 @@
+// /////////////////////////////////////////////////////////////////
+// Function Name : Check
+// Description   : Checks if a number is divisible by 5.
+// Input         : int
+// Output        : bool
+// Author        : Shweta Gogawale
+// Date          : 20/11/2025
+// Time Complexity : O(1)
+// /////////////////////////////////////////////////////////////////
+
 #include <stdio.h>
 #include <stdbool.h>
 
@@ -18,8 +28,8 @@ int main()
     int iValue = 0;
     bool bRet = false;
 
-    printf("Enter number: ");
-    scanf("%d", &iValue);
+    printf("Enter number : ");
+    scanf("%d",&iValue);
 
     bRet = Check(iValue);
 

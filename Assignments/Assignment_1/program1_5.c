@@ -1,21 +1,26 @@
+// /////////////////////////////////////////////////////////////////
+// Function Name : Accept
+// Description   : Prints '*' character n times.
+// Input         : int
+// Output        : None
+// Author        : Shweta Gogawale
+// Date          : 20/11/2025
+// Time Complexity : O(n)
+// /////////////////////////////////////////////////////////////////
+
 #include <stdio.h>
 
 void Accept(int iNo)
 {
-    int iCnt = 0;
-
-    for(iCnt = 1; iCnt <= iNo; iCnt++)
+    for(int iCnt = 0; iCnt < iNo; iCnt++)
     {
-        printf("* ");
+        printf("*");
     }
 }
 
 int main()
 {
-    int iValue = 0;
-
-    printf("Enter number: ");
-    scanf("%d", &iValue);
+    int iValue = 5;
 
     Accept(iValue);
 
