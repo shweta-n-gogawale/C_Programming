@@ -1,39 +1,40 @@
-typedef int BOOL;
+/*
+  Function Name : ChkVowel
+  Description   : Return 1 (TRUE) if the character is a vowel (a,e,i,o,u or uppercase), else 0 (FALSE).
+  Input         : char cValue
+  Output        : main prints "TRUE" or "FALSE" based on return
+  Author        : Shweta Gogawale
+  Date          : 2025-11-20
+*/
 
-#define TRUE 1
+#include <stdio.h>
+
+typedef int BOOL;
+#define TRUE  1
 #define FALSE 0
 
-BOOL ChkVowel(char ch)
+BOOL ChkVowel(char c)
 {
-    if(ch=='A' || ch=='E' || ch=='I' || ch=='O' || ch=='U' ||
-       ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u')
-    {
+    /* normalize to lowercase */
+    if (c >= 'A' && c <= 'Z')
+        c = c + ('a' - 'A');
+
+    if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')
         return TRUE;
-    }
-    else
-    {
-        return FALSE;
-    }
+    return FALSE;
 }
 
-int main()
+int main(void)
 {
     char cValue = '\0';
-    BOOL bRet = FALSE;
+    printf("Enter character: ");
+    if (scanf(" %c", &cValue) != 1) return 0;
 
-    printf("Enter character\n");
-    scanf("%c",&cValue);
-
-    bRet = ChkVowel(cValue);
-
-    if(bRet == TRUE)
-    {
-        printf("It is Vowel");
-    }
+    BOOL bRet = ChkVowel(cValue);
+    if (bRet == TRUE)
+        printf("TRUE\n");
     else
-    {
-        printf("It is not Vowel");
-    }
+        printf("FALSE\n");
 
     return 0;
 }

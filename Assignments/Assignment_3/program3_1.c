@@ -1,26 +1,33 @@
+/*
+  Function Name : PrintEven
+  Description   : Accept an integer N and print first N even numbers (2,4,6,...).
+  Input         : int N
+  Output        : prints the first N even numbers separated by spaces
+  Author        : Shweta Gogawale
+  Date          : 2025-11-20
+*/
+
+#include <stdio.h>
+
 void PrintEven(int iNo)
 {
-    if(iNo <= 0)
-    {
+    if (iNo <= 0)
         return;
-    }
 
-    // Logic
-    int i = 0;
-    for(i = 1; i <= iNo; i++)
+    int i;
+    for (i = 1; i <= iNo; i++)
     {
-        printf("%d\t", i * 2);
+        printf("%d ", 2 * i);
     }
+    printf("\n");
 }
 
-int main()
+int main(void)
 {
     int iValue = 0;
-
-    printf("Enter number\n");
-    scanf("%d",&iValue);
+    printf("Enter number: ");
+    if (scanf("%d", &iValue) != 1) return 0;
 
     PrintEven(iValue);
-
     return 0;
 }
