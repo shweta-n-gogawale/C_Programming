@@ -1,19 +1,28 @@
-/* Program 1: Read full name (including spaces) and print it */
-#include <stdio.h>
-#include <string.h>
+/*
+  Function Name   : PrintName
+  Description     : Accept a full name from the user and print it.
+  Input           : char Name[30]
+  Output          : Prints the entered name
+  Author          : Shweta Gogawale
+  Date            : 2025-11-22
+  Time Complexity : O(n)
+*/
 
-int main(void)
+#include <stdio.h>
+
+void PrintName(char Name[])
 {
-    char Name[100];
+    printf("Your name is %s\n", Name);
+}
+
+int main()
+{
+    char Name[30];
 
     printf("Please enter full name: ");
-    if (fgets(Name, sizeof(Name), stdin) != NULL)
-    {
-        /* remove trailing newline if present */
-        size_t len = strlen(Name);
-        if (len > 0 && Name[len-1] == '\n') Name[len-1] = '\0';
-    }
+    scanf("%s", Name);
 
-    printf("Your name is %s\n", Name);
+    PrintName(Name);
+
     return 0;
 }

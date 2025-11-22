@@ -1,26 +1,46 @@
-/* Program 2: Check greater than 100 */
+/*
+  Function Name   : ChkGreater
+  Description     : Accept a number and return TRUE(1) if it is greater than 100, otherwise FALSE(0).
+  Input           : int iNo
+  Output          : TRUE or FALSE
+  Author          : Shweta Gogawale
+  Date            : 2025-11-22
+  Time Complexity : O(1)
+*/
+
 #include <stdio.h>
 #include <stdbool.h>
 
-bool ChkGreater(int number)
+bool ChkGreater(int iNo)
 {
-    return (number > 100);
+    if(iNo > 100)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
-int main(void)
+int main()
 {
     int iValue = 0;
     bool bRet = false;
 
     printf("Please enter number: ");
-    if (scanf("%d", &iValue) != 1) return 0;
+    scanf("%d", &iValue);
 
     bRet = ChkGreater(iValue);
 
-    if (bRet)
+    if(bRet == true)
+    {
         printf("Greater\n");
+    }
     else
+    {
         printf("Smaller\n");
+    }
 
     return 0;
 }
