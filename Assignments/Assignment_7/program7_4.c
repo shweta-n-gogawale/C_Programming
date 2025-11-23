@@ -1,15 +1,24 @@
+/*
+  Function Name   : OddDisplay
+  Description     : Accept a number from the user and print all odd numbers up to that number.
+  Input           : int iNo
+  Output          : 1 3 5 7 9 ...
+  Author          : Shweta Gogawale
+  Date            : 2025-11-22
+  Time Complexity : O(n)
+                    
+*/
+
 #include <stdio.h>
 
 void OddDisplay(int iNo)
 {
-    int i = 0;
-
     if(iNo < 0)
     {
-        iNo = -iNo;
+        iNo = -iNo;   // convert negative to positive
     }
 
-    for(i = 1; i <= iNo; i++)
+    for(int i = 1; i <= iNo; i++)
     {
         if(i % 2 != 0)
         {
@@ -23,7 +32,7 @@ int main()
     int iValue = 0;
 
     printf("Enter number: ");
-    scanf("%d",&iValue);
+    scanf("%d", &iValue);
 
     OddDisplay(iValue);
 
