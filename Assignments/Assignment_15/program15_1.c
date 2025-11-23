@@ -6,7 +6,6 @@
     Author          : Shweta Gogawale
     Date            : 2025-11-23
     Time Complexity : O(N)
-                      (N = number of digits)
 */
 
 #include <stdio.h>
