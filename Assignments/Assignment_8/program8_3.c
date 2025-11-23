@@ -1,8 +1,18 @@
+/*
+  Function Name   : Factorial
+  Description     : Accept number and return its factorial.
+  Input           : int iNo
+  Output          : int (factorial)
+  Author          : Shweta Gogawale
+  Date            : 2025-11-22
+  Time Complexity : O(n)
+*/
+
 #include <stdio.h>
 
 int Factorial(int iNo)
 {
-    int i = 0, fact = 1;
+    int i = 0, iFact = 1;
 
     if(iNo < 0)
     {
@@ -11,10 +21,10 @@ int Factorial(int iNo)
 
     for(i = 1; i <= iNo; i++)
     {
-        fact = fact * i;
+        iFact = iFact * i;
     }
 
-    return fact;
+    return iFact;
 }
 
 int main()
@@ -22,7 +32,7 @@ int main()
     int iValue = 0, iRet = 0;
 
     printf("Enter number: ");
-    scanf("%d",&iValue);
+    scanf("%d", &iValue);
 
     iRet = Factorial(iValue);
 
