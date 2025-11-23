@@ -1,29 +1,40 @@
+/*
+  Function Name   : DiffFactorial
+  Description     : Calculate difference between even factorial and odd factorial of a number.
+  Input           : int iNo
+  Output          : int (EvenFact - OddFact)
+  Author          : Shweta Gogawale
+  Date            : 2025-11-22
+  Time Complexity : O(n)
+                    (calculates even and odd factorial in same single loop)
+*/
+
 #include <stdio.h>
 
-int FactorialDiff(int iNo)
+int DiffFactorial(int iNo)
 {
     int i = 0;
-    int evenFact = 1;
-    int oddFact = 1;
+    int iEvenFact = 1;
+    int iOddFact  = 1;
 
     if(iNo < 0)
     {
-        iNo = -iNo;
+        iNo = -iNo;      // convert negative to positive
     }
 
-    for(i = iNo; i >= 1; i--)
+    for(i = 1; i <= iNo; i++)
     {
         if(i % 2 == 0)
         {
-            evenFact = evenFact * i;
+            iEvenFact = iEvenFact * i;
         }
         else
         {
-            oddFact = oddFact * i;
+            iOddFact = iOddFact * i;
         }
     }
 
-    return evenFact - oddFact;
+    return iEvenFact - iOddFact;
 }
 
 int main()
@@ -31,11 +42,11 @@ int main()
     int iValue = 0, iRet = 0;
 
     printf("Enter number: ");
-    scanf("%d",&iValue);
+    scanf("%d", &iValue);
 
-    iRet = FactorialDiff(iValue);
+    iRet = DiffFactorial(iValue);
 
-    printf("Factorial difference is %d", iRet);
+    printf("Differential Factorial is %d", iRet);
 
     return 0;
 }

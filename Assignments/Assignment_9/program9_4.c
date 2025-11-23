@@ -1,23 +1,34 @@
+/*
+  Function Name   : OddFactorial
+  Description     : Calculate the odd factorial of a given number.
+  Input           : int iNo
+  Output          : Returns odd factorial
+  Author          : Shweta Gogawale
+  Date            : 2025-11-22
+  Time Complexity : O(n/2)
+                    (loop runs on odd numbers only)
+*/
+
 #include <stdio.h>
 
 int OddFactorial(int iNo)
 {
-    int i = 0, fact = 1;
+    int iFact = 1;
 
     if(iNo < 0)
     {
-        iNo = -iNo;
+        iNo = -iNo;        // convert negative number to positive
     }
 
-    for(i = iNo; i >= 1; i--)
+    for(int i = iNo; i >= 1; i--)
     {
-        if(i % 2 != 0)
+        if(i % 2 != 0)     // only multiply odd numbers
         {
-            fact = fact * i;
+            iFact = iFact * i;
         }
     }
 
-    return fact;
+    return iFact;
 }
 
 int main()
@@ -25,7 +36,7 @@ int main()
     int iValue = 0, iRet = 0;
 
     printf("Enter number: ");
-    scanf("%d",&iValue);
+    scanf("%d", &iValue);
 
     iRet = OddFactorial(iValue);
 
