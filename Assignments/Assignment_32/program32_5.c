@@ -1,13 +1,20 @@
 /*
     Function Name   : Pattern
-    Description     : Display numbers in 1st and last row & column; middle is '*'.
+    Description     : Accept number of rows and columns from user and 
+                      display '*' above diagonal and '#' on and below 
+                      diagonal.
+
+                      Condition:
+                        if(i < j)   → print '*'
+                        else        → print '#'
+
     Input           : Integer iRow, Integer iCol
     Output          : Pattern
     Author          : Shweta Gogawale
-    Date            : 2025-11-25
+    Date            : 07-12-2025
 */
 
-#include<stdio.h>
+#include <stdio.h>
 
 void Pattern(int iRow, int iCol)
 {
@@ -17,13 +24,13 @@ void Pattern(int iRow, int iCol)
     {
         for(j = 1; j <= iCol; j++)
         {
-            if(i == 1 || i == iRow || j == 1 || j == iCol)
-            {
-                printf("%d\t", j);
-            }
-            else
+            if(i < j)         
             {
                 printf("*\t");
+            }
+            else              
+            {
+                printf("#\t");
             }
         }
         printf("\n");
@@ -35,7 +42,7 @@ int main()
     int iValue1 = 0, iValue2 = 0;
 
     printf("Enter number of rows and columns\n");
-    scanf("%d %d",&iValue1, &iValue2);
+    scanf("%d %d", &iValue1, &iValue2);
 
     Pattern(iValue1, iValue2);
 

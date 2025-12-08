@@ -1,13 +1,16 @@
 /*
     Function Name   : Pattern
-    Description     : Display upper rows as '*' and lower rows as '#'.
+    Description     : Accept number of rows and columns from user and 
+                      display pattern using '*', '#', and '@' based on 
+                      row and column positions.
+
     Input           : Integer iRow, Integer iCol
     Output          : Pattern
     Author          : Shweta Gogawale
-    Date            : 2025-11-25
+    Date            : 07-12-2025
 */
 
-#include<stdio.h>
+#include <stdio.h>
 
 void Pattern(int iRow, int iCol)
 {
@@ -17,13 +20,21 @@ void Pattern(int iRow, int iCol)
     {
         for(j = 1; j <= iCol; j++)
         {
-            if(i < j)
+            if(j == 1)                 
             {
                 printf("*\t");
             }
-            else
+            else if(j == 2)            
+            {
+                printf("*\t");
+            }
+            else if(j == 3)            
             {
                 printf("#\t");
+            }
+            else                       
+            {
+                printf("@\t");
             }
         }
         printf("\n");
@@ -35,7 +46,7 @@ int main()
     int iValue1 = 0, iValue2 = 0;
 
     printf("Enter number of rows and columns\n");
-    scanf("%d %d",&iValue1, &iValue2);
+    scanf("%d %d", &iValue1, &iValue2);
 
     Pattern(iValue1, iValue2);
 

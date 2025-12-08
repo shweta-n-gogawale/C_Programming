@@ -1,13 +1,16 @@
 /*
     Function Name   : Pattern
-    Description     : Display '$' on diagonal and '*' elsewhere.
+    Description     : Accept number of rows and columns from user and 
+                      display pattern of '*' where only the diagonal 
+                      elements are printed, and other positions remain blank.
+
     Input           : Integer iRow, Integer iCol
     Output          : Pattern
     Author          : Shweta Gogawale
-    Date            : 2025-11-25
+    Date            : 07-12-2025
 */
 
-#include<stdio.h>
+#include <stdio.h>
 
 void Pattern(int iRow, int iCol)
 {
@@ -19,11 +22,11 @@ void Pattern(int iRow, int iCol)
         {
             if(i == j)
             {
-                printf("$\t");
+                printf("*\t");   
             }
             else
             {
-                printf("*\t");
+                printf(" \t");  
             }
         }
         printf("\n");
@@ -35,7 +38,7 @@ int main()
     int iValue1 = 0, iValue2 = 0;
 
     printf("Enter number of rows and columns\n");
-    scanf("%d %d",&iValue1, &iValue2);
+    scanf("%d %d", &iValue1, &iValue2);
 
     Pattern(iValue1, iValue2);
 

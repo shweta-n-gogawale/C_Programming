@@ -1,13 +1,16 @@
 /*
     Function Name   : Pattern
-    Description     : Accept rows and columns and display pattern of '*' and '#'.
+    Description     : Accept number of rows and columns from user and 
+                      display the pattern of '*' except last column 
+                      where '#' should be printed.
+                      
     Input           : Integer iRow, Integer iCol
     Output          : Pattern
     Author          : Shweta Gogawale
-    Date            : 2025-11-25
+    Date            : 07-12-2025
 */
 
-#include<stdio.h>
+#include <stdio.h>
 
 void Pattern(int iRow, int iCol)
 {
@@ -17,13 +20,13 @@ void Pattern(int iRow, int iCol)
     {
         for(j = 1; j <= iCol; j++)
         {
-            if(j <= 2)
-            {
-                printf("*\t");
-            }
-            else
+            if(j == iCol)          
             {
                 printf("#\t");
+            }
+            else                   
+            {
+                printf("*\t");
             }
         }
         printf("\n");
@@ -35,7 +38,7 @@ int main()
     int iValue1 = 0, iValue2 = 0;
 
     printf("Enter number of rows and columns\n");
-    scanf("%d %d",&iValue1, &iValue2);
+    scanf("%d %d", &iValue1, &iValue2);
 
     Pattern(iValue1, iValue2);
 
