@@ -1,50 +1,44 @@
 /*
-    Function Name   : Pattern
-    Description     : Accept number of rows and columns from user and 
-                      display '*' above diagonal and '#' on and below 
-                      diagonal.
-
-                      Condition:
-                        if(i < j)   → print '*'
-                        else        → print '#'
-
-    Input           : Integer iRow, Integer iCol
-    Output          : Pattern
+    Function Name   : StrCpyToggle
+    Description     : Copy string by toggling the case of characters.
+    Input           : char *, char *
+    Output          : Copied string
     Author          : Shweta Gogawale
     Date            : 07-12-2025
 */
 
-#include <stdio.h>
+#include<stdio.h>
 
-void Pattern(int iRow, int iCol)
+void StrCpyToggle(char *src, char *dest)
 {
-    int i = 0, j = 0;
-
-    for(i = 1; i <= iRow; i++)
+    while(*src != '\0')
     {
-        for(j = 1; j <= iCol; j++)
+        if((*src >= 'A') && (*src <= 'Z'))
         {
-            if(i < j)         
-            {
-                printf("*\t");
-            }
-            else              
-            {
-                printf("#\t");
-            }
+            *dest = *src + 32;
         }
-        printf("\n");
+        else if((*src >= 'a') && (*src <= 'z'))
+        {
+            *dest = *src - 32;
+        }
+        else
+        {
+            *dest = *src;
+        }
+        src++;
+        dest++;
     }
+    *dest = '\0';
 }
 
 int main()
 {
-    int iValue1 = 0, iValue2 = 0;
+    char arr[30] = "Marvellous Python 2";
+    char brr[30];
 
-    printf("Enter number of rows and columns\n");
-    scanf("%d %d", &iValue1, &iValue2);
+    StrCpyToggle(arr, brr);
 
-    Pattern(iValue1, iValue2);
+    printf("%s\n", brr);
 
     return 0;
 }
